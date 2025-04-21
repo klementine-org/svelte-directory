@@ -26,9 +26,9 @@
 	data-sidebar="trigger"
 	variant="ghost"
 	size="icon"
-	class={cn("h-7 w-7", className)}
+	class={className}
 	{...restProps}
 >
-	<PanelLeft />
+	<PanelLeft class="size-5!" />
 	<span class="sr-only">Toggle Sidebar</span>
 </Button>
