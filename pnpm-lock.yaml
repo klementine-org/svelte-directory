@@ -68,6 +68,9 @@ importers:
       svelte-check:
         specifier: ^4.0.0
         version: 4.1.6(picomatch@4.0.2)(svelte@5.28.1)(typescript@5.8.3)
+      sveltekit-search-params:
+        specifier: ^3.0.0
+        version: 3.0.0(@sveltejs/kit@2.20.7(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)))(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)))(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2))
       tailwind-merge:
         specifier: ^3.2.0
         version: 3.2.0
@@ -482,6 +485,14 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       vite: ^5.0.3 || ^6.0.0
 
+  '@sveltejs/vite-plugin-svelte-inspector@2.1.0':
+    resolution: {integrity: sha512-9QX28IymvBlSCqsCll5t0kQVxipsfhFFL+L2t3nTWfXnddYwxBuAEtTtlaVQpRz9c37BhJjltSeY4AJSC03SSg==}
+    engines: {node: ^18.0.0 || >=20}
+    peerDependencies:
+      '@sveltejs/vite-plugin-svelte': ^3.0.0
+      svelte: ^4.0.0 || ^5.0.0-next.0
+      vite: ^5.0.0
+
   '@sveltejs/vite-plugin-svelte-inspector@4.0.1':
     resolution: {integrity: sha512-J/Nmb2Q2y7mck2hyCX4ckVHcR5tu2J+MtBEQqpDrrgELZ2uvraQcK/ioCV61AqkdXFgriksOKIceDcQmqnGhVw==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22}
@@ -489,6 +500,13 @@ packages:
       '@sveltejs/vite-plugin-svelte': ^5.0.0
       svelte: ^5.0.0
       vite: ^6.0.0
+
+  '@sveltejs/vite-plugin-svelte@3.1.2':
+    resolution: {integrity: sha512-Txsm1tJvtiYeLUVRNqxZGKR/mI+CzuIQuc2gn+YCs9rMTowpNZ2Nqt53JdL8KF9bLhAf2ruR/dr9eZCwdTriRA==}
+    engines: {node: ^18.0.0 || >=20}
+    peerDependencies:
+      svelte: ^4.0.0 || ^5.0.0-next.0
+      vite: ^5.0.0
 
   '@sveltejs/vite-plugin-svelte@5.0.3':
     resolution: {integrity: sha512-MCFS6CrQDu1yGwspm4qtli0e63vaPCehf6V7pIMP15AsWgMKrqDGCPFF/0kn4SP0ii4aySu4Pa62+fIRGFMjgw==}
@@ -1319,6 +1337,12 @@ packages:
       svelte:
         optional: true
 
+  svelte-hmr@0.16.0:
+    resolution: {integrity: sha512-Gyc7cOS3VJzLlfj7wKS0ZnzDVdv3Pn2IuVeJPk9m2skfhcu5bq3wtIZyQGggr7/Iim5rH5cncyQft/kRLupcnA==}
+    engines: {node: ^12.20 || ^14.13.1 || >= 16}
+    peerDependencies:
+      svelte: ^3.19.0 || ^4.0.0
+
   svelte-toolbelt@0.7.1:
     resolution: {integrity: sha512-HcBOcR17Vx9bjaOceUvxkY3nGmbBmCBBbuWLLEWO6jtmWH8f/QoWmbyUfQZrpDINH39en1b8mptfPQT9VKQ1xQ==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
@@ -1328,6 +1352,12 @@ packages:
   svelte@5.28.1:
     resolution: {integrity: sha512-iOa9WmfNG95lSOSJdMhdjJ4Afok7IRAQYXpbnxhd5EINnXseG0GVa9j6WPght4eX78XfFez45Fi+uRglGKPV/Q==}
     engines: {node: '>=18'}
+
+  sveltekit-search-params@3.0.0:
+    resolution: {integrity: sha512-wq1Yo5zITev8ty9CWGmHgvAh+Xb3mCUewyUmvCdv6MJWi+/aZ4o79Y6SjuduDL0Cfd/KYHkqt4f/wQ4FtokSdw==}
+    peerDependencies:
+      '@sveltejs/kit': ^1.0.0 || ^2.0.0
+      svelte: ^3.55.0 || ^4.0.0 || ^5.0.0
 
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
@@ -1435,6 +1465,14 @@ packages:
       tsx:
         optional: true
       yaml:
+        optional: true
+
+  vitefu@0.2.5:
+    resolution: {integrity: sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==}
+    peerDependencies:
+      vite: ^3.0.0 || ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      vite:
         optional: true
 
   vitefu@1.0.6:
@@ -1744,12 +1782,35 @@ snapshots:
       svelte: 5.28.1
       vite: 6.3.2(jiti@2.4.2)(lightningcss@1.29.2)
 
+  '@sveltejs/vite-plugin-svelte-inspector@2.1.0(@sveltejs/vite-plugin-svelte@3.1.2(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)))(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2))':
+    dependencies:
+      '@sveltejs/vite-plugin-svelte': 3.1.2(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2))
+      debug: 4.4.0
+      svelte: 5.28.1
+      vite: 6.3.2(jiti@2.4.2)(lightningcss@1.29.2)
+    transitivePeerDependencies:
+      - supports-color
+
   '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)))(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2))
       debug: 4.4.0
       svelte: 5.28.1
       vite: 6.3.2(jiti@2.4.2)(lightningcss@1.29.2)
+    transitivePeerDependencies:
+      - supports-color
+
+  '@sveltejs/vite-plugin-svelte@3.1.2(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2))':
+    dependencies:
+      '@sveltejs/vite-plugin-svelte-inspector': 2.1.0(@sveltejs/vite-plugin-svelte@3.1.2(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)))(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2))
+      debug: 4.4.0
+      deepmerge: 4.3.1
+      kleur: 4.1.5
+      magic-string: 0.30.17
+      svelte: 5.28.1
+      svelte-hmr: 0.16.0(svelte@5.28.1)
+      vite: 6.3.2(jiti@2.4.2)(lightningcss@1.29.2)
+      vitefu: 0.2.5(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2))
     transitivePeerDependencies:
       - supports-color
 
@@ -2516,6 +2577,10 @@ snapshots:
     optionalDependencies:
       svelte: 5.28.1
 
+  svelte-hmr@0.16.0(svelte@5.28.1):
+    dependencies:
+      svelte: 5.28.1
+
   svelte-toolbelt@0.7.1(svelte@5.28.1):
     dependencies:
       clsx: 2.1.1
@@ -2539,6 +2604,15 @@ snapshots:
       locate-character: 3.0.0
       magic-string: 0.30.17
       zimmerframe: 1.1.2
+
+  sveltekit-search-params@3.0.0(@sveltejs/kit@2.20.7(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)))(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)))(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)):
+    dependencies:
+      '@sveltejs/kit': 2.20.7(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)))(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2))
+      '@sveltejs/vite-plugin-svelte': 3.1.2(svelte@5.28.1)(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2))
+      svelte: 5.28.1
+    transitivePeerDependencies:
+      - supports-color
+      - vite
 
   tabbable@6.2.0: {}
 
@@ -2608,6 +2682,10 @@ snapshots:
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.29.2
+
+  vitefu@0.2.5(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)):
+    optionalDependencies:
+      vite: 6.3.2(jiti@2.4.2)(lightningcss@1.29.2)
 
   vitefu@1.0.6(vite@6.3.2(jiti@2.4.2)(lightningcss@1.29.2)):
     optionalDependencies:
