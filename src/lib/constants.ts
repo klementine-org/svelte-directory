@@ -10,3 +10,12 @@ export enum QueryParamEnum {
 	TAGS = 'tags',
 }
 
+export enum PaginationParamEnum {
+	LIMIT = 'limit',
+	SKIP = 'skip',
+}
+
+export const PAGINATION_DEFAULTS = {
+	limit: 50,
+	skip: 0,
+} as const;
