@@ -1,6 +1,13 @@
 @import 'tailwindcss';
 @import "tw-animate-css";
 
+@font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist/Geist[wght].woff2') format('woff2');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
 :root {
     --background: hsl(0 0% 100%);
     --foreground: hsl(240 10% 3.9%);
@@ -8,8 +15,8 @@
     --card-foreground: hsl(240 10% 3.9%);
     --popover: hsl(0 0% 100%);
     --popover-foreground: hsl(240 10% 3.9%);
-    --primary: hsl(240 5.9% 10%);
-    --primary-foreground: hsl(0 0% 98%);
+    --primary: #ff3e00;
+    --primary-foreground: #ffffff;
     --secondary: hsl(240 4.8% 95.9%);
     --secondary-foreground: hsl(240 5.9% 10%);
     --muted: hsl(240 4.8% 95.9%);
@@ -41,8 +48,8 @@
     --card-foreground: hsl(0 0% 98%);
     --popover: hsl(240 10% 3.9%);
     --popover-foreground: hsl(0 0% 98%);
-    --primary: hsl(0 0% 98%);
-    --primary-foreground: hsl(240 5.9% 10%);
+    --primary: #f77b52;
+    --primary-foreground: #ffffff;
     --secondary: hsl(240 3.7% 15.9%);
     --secondary-foreground: hsl(0 0% 98%);
     --muted: hsl(240 3.7% 15.9%);
@@ -64,6 +71,10 @@
     --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
     --sidebar-border: hsl(240 3.7% 15.9%);
     --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+@theme {
+    --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 @theme inline {
@@ -103,5 +114,9 @@
     }
     body {
         @apply bg-background text-foreground;
+    }
+
+    ::selection {
+        @apply bg-primary text-primary-foreground;
     }
 }
