@@ -21,7 +21,7 @@
 <div class="flex items-center gap-3">
 	<div class="flex items-center justify-center size-8 bg-muted rounded-full">
 		<Avatar.Root>
-			<Avatar.Image src="data:image/png;base64,{library.orgAvatarBase64}" alt="Organization Avatar" />
+			<Avatar.Image src="data:image/png;base64,{library.ownerAvatarBase64}" alt="Organization Avatar" />
 			<Avatar.Fallback>
 				<PackageIcon class="size-4 text-muted-foreground" />
 			</Avatar.Fallback>
@@ -29,7 +29,7 @@
 	</div>
 	<div>
 		<div class="text-foreground/80 text-sm truncate">
-			{library.org} ({authors})
+			{library.owner} ({authors})
 		</div>
 		<div class="flex text-xs items-center">
 			<div class="text-muted-foreground whitespace-nowrap">
