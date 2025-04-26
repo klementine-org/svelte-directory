@@ -19,3 +19,7 @@ export const PAGINATION_DEFAULTS = {
 	limit: 50,
 	skip: 0,
 } as const;
+
+export const QUERY_DEFAULTS = {
+	sortOption: SortOptionEnum.NAME,
+}
