@@ -1,25 +1,25 @@
 export enum SortOptionEnum {
 	NAME = 'name',
 	STARS = 'stars',
-	LAST_UPDATED = 'lastUpdated',
+	LAST_UPDATED = 'lastUpdated'
 }
 
 export enum QueryParamEnum {
 	SEARCH = 'search',
 	SORT = 'sort',
-	TAGS = 'tags',
+	TAGS = 'tags'
 }
 
 export enum PaginationParamEnum {
 	LIMIT = 'limit',
-	SKIP = 'skip',
+	SKIP = 'skip'
 }
 
 export const PAGINATION_DEFAULTS = {
 	limit: 50,
-	skip: 0,
+	skip: 0
 } as const;
 
 export const QUERY_DEFAULTS = {
-	sortOption: SortOptionEnum.NAME,
-}
+	sortOption: SortOptionEnum.NAME
+};

@@ -4,12 +4,12 @@
 	import { inputVariants } from '$lib/components/ui/input';
 	import { queryParams } from '$lib/hooks/query-params.svelte.js';
 </script>
-<label
-	class={inputVariants({class: "rounded-full"})}>
+
+<label class={inputVariants({ class: 'rounded-full' })}>
 	{#if navigating.to}
-		<LoaderCircleIcon class="size-5 mr-2 animate-spin" />
+		<LoaderCircleIcon class="mr-2 size-5 animate-spin" />
 	{:else}
-		<SearchIcon class="size-5 mr-2" />
+		<SearchIcon class="mr-2 size-5" />
 	{/if}
 	<input
 		id="search"

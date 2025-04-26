@@ -21,7 +21,7 @@
 
 	export type InputProps = WithElementRef<
 		Omit<HTMLInputAttributes, 'type'> &
-		({ type: 'file'; files?: FileList } | { type?: InputType; files?: undefined })
+			({ type: 'file'; files?: FileList } | { type?: InputType; files?: undefined })
 	>;
 </script>
 
@@ -36,24 +36,17 @@
 		class: className,
 		...restProps
 	}: InputProps = $props();
-
 </script>
 
-{#if type === "file"}
+{#if type === 'file'}
 	<input
 		bind:this={ref}
-		class={cn(inputVariants({ variant: "file" }), className)}
+		class={cn(inputVariants({ variant: 'file' }), className)}
 		type="file"
-		bind:files={files}
+		bind:files
 		bind:value
 		{...restProps}
 	/>
 {:else}
-	<input
-		bind:this={ref}
-		class={cn(inputVariants(), className)}
-		{type}
-		bind:value
-		{...restProps}
-	/>
+	<input bind:this={ref} class={cn(inputVariants(), className)} {type} bind:value {...restProps} />
 {/if}

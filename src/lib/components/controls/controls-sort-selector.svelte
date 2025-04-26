@@ -17,14 +17,20 @@
 
 	const sortOptionEntries = Object.entries(SORT_OPTIONS);
 </script>
+
 <script lang="ts">
 	import * as ToggleGroup from '$lib/components/ui/toggle-group';
 	import { queryParams } from '$lib/hooks/query-params.svelte.js';
 </script>
 
-<ToggleGroup.Root type="single" data-orientation="vertical" class="flex-col items-start" bind:value={queryParams.sort}>
+<ToggleGroup.Root
+	type="single"
+	data-orientation="vertical"
+	class="flex-col items-start"
+	bind:value={queryParams.sort}
+>
 	{#each sortOptionEntries as [value, { label, icon: Icon }] (value)}
-		<ToggleGroup.Item value={value} class="justify-start w-full">
+		<ToggleGroup.Item {value} class="w-full justify-start">
 			<Icon />
 			{label}
 		</ToggleGroup.Item>

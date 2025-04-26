@@ -17,9 +17,9 @@ export const LIBRARIES_DIR = path.join(cwd, 'data', 'libraries');
 export const ASSETS_DIR = path.join(cwd, 'src', 'lib', 'assets');
 
 export function loadLibraries(): Library[] {
-	const files = fs.readdirSync(LIBRARIES_DIR).filter(file => file.endsWith('.json'));
+	const files = fs.readdirSync(LIBRARIES_DIR).filter((file) => file.endsWith('.json'));
 
-	return files.map(file => {
+	return files.map((file) => {
 		const filePath = path.join(LIBRARIES_DIR, file);
 		const content = fs.readFileSync(filePath, 'utf8');
 		return JSON.parse(content) as Library;

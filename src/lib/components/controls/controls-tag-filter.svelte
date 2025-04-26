@@ -1,6 +1,7 @@
 <script module lang="ts">
 	import { queryParams } from '$lib/hooks/query-params.svelte.js';
 </script>
+
 <script lang="ts">
 	import { page } from '$app/state';
 	import { Badge } from '$lib/components/ui/badge';
@@ -17,11 +18,11 @@
 		{@const isActive = queryParams.isActiveTag(tag)}
 		<Badge
 			onclick={() => queryParams.toggleTag(tag)}
-			variant={isActive ? "default" : "secondary"}
+			variant={isActive ? 'default' : 'secondary'}
 			class={cn(
-						"px-3 py-1.5 cursor-pointer transition-all duration-150 select-none",
-						!isActive && "hover:brightness-80"
-					)}
+				'cursor-pointer px-3 py-1.5 transition-all duration-150 select-none',
+				!isActive && 'hover:brightness-80'
+			)}
 		>
 			{tag}
 		</Badge>

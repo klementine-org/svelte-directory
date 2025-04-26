@@ -1,14 +1,14 @@
 <script>
-	import { page } from "$app/state";
-	import LightSwitch from "./header-light-switch.svelte";
-	import RepositoryLink from "./header-repository-link.svelte";
-	import Search from "./header-search.svelte";
+	import { page } from '$app/state';
+	import LightSwitch from './header-light-switch.svelte';
+	import RepositoryLink from './header-repository-link.svelte';
+	import Search from './header-search.svelte';
 	import { SidebarTrigger } from '$lib/components/ui/sidebar/index.js';
 
 	const count = $derived(page.data.count);
 </script>
 
-<header class="h-24 pt-4 px-6 pb-3 bg-background sticky top-0 z-10 flex border-b">
+<header class="bg-background sticky top-0 z-10 flex h-24 border-b px-6 pt-4 pb-3">
 	<div class="h-full w-12 lg:w-16">
 		<SidebarTrigger />
 	</div>
@@ -21,9 +21,10 @@
 			</div>
 		</div>
 		<div class="flex items-center justify-between">
-				<span class="text-muted-foreground text-sm">
-					{count} {count === 1 ? 'Library' : 'Libraries'} Found
-				</span>
+			<span class="text-muted-foreground text-sm">
+				{count}
+				{count === 1 ? 'Library' : 'Libraries'} Found
+			</span>
 		</div>
 	</div>
 </header>

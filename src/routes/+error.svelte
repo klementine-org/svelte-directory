@@ -1,5 +1,5 @@
 <script>
-	import {Error} from '$lib/components/error';
+	import { Error } from '$lib/components/error';
 </script>
 
 <Error />

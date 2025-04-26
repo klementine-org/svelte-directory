@@ -1,5 +1,5 @@
 import type { Library } from '$lib/types';
-import compiledData from '$lib/assets/compiled-data.json' assert { type: 'json' }
+import compiledData from '$lib/assets/compiled-data.json' assert { type: 'json' };
 import _ from 'lodash';
 import lunr from 'lunr';
 import { QueryParamEnum, PaginationParamEnum } from '$lib/constants';
@@ -9,11 +9,11 @@ const { libraries, index, tags } = compiledData;
 
 export const load = async ({ url }) => {
 	const params = queryParamsSchema.parse({
-		'search': url.searchParams.get(QueryParamEnum.SEARCH) || undefined,
-		'tags': url.searchParams.get(QueryParamEnum.TAGS) || undefined,
-		'sort': url.searchParams.get(QueryParamEnum.SORT) || undefined,
-		'skip': url.searchParams.get(PaginationParamEnum.SKIP) || undefined,
-		'limit': url.searchParams.get(PaginationParamEnum.LIMIT) || undefined
+		search: url.searchParams.get(QueryParamEnum.SEARCH) || undefined,
+		tags: url.searchParams.get(QueryParamEnum.TAGS) || undefined,
+		sort: url.searchParams.get(QueryParamEnum.SORT) || undefined,
+		skip: url.searchParams.get(PaginationParamEnum.SKIP) || undefined,
+		limit: url.searchParams.get(PaginationParamEnum.LIMIT) || undefined
 	});
 
 	// Load search index

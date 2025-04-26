@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {SidebarGroup, SidebarGroupLabel, SidebarGroupContent} from '$lib/components/ui/sidebar';
+	import { SidebarGroup, SidebarGroupLabel, SidebarGroupContent } from '$lib/components/ui/sidebar';
 	import SortSelector from './controls-sort-selector.svelte';
 	import TagFilter from './controls-tag-filter.svelte';
 </script>
@@ -19,5 +19,3 @@
 		<TagFilter />
 	</SidebarGroupContent>
 </SidebarGroup>
-
-

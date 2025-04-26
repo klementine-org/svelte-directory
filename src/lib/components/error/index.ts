@@ -1,1 +1,1 @@
-export {default as Error} from './error.svelte';
+export { default as Error } from './error.svelte';

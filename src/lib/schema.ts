@@ -1,7 +1,8 @@
 import { z } from 'zod';
 import {
 	PAGINATION_DEFAULTS,
-	PaginationParamEnum, QUERY_DEFAULTS,
+	PaginationParamEnum,
+	QUERY_DEFAULTS,
 	QueryParamEnum,
 	SortOptionEnum
 } from './constants';
@@ -32,11 +33,9 @@ export const queryParamsSchema = z.object({
 			// If an empty was empty, it would filter out all libraries, so we return null instead
 			return val?.length === 0 ? null : val;
 		}),
-	[QueryParamEnum.SORT]: z.enum([
-		SortOptionEnum.NAME,
-		SortOptionEnum.STARS,
-		SortOptionEnum.LAST_UPDATED
-	]).catch(QUERY_DEFAULTS.sortOption), // We need .catch here, because on initial load no default params are provided, only after the first load query params will be set in the client.
+	[QueryParamEnum.SORT]: z
+		.enum([SortOptionEnum.NAME, SortOptionEnum.STARS, SortOptionEnum.LAST_UPDATED])
+		.catch(QUERY_DEFAULTS.sortOption), // We need .catch here, because on initial load no default params are provided, only after the first load query params will be set in the client.
 	[PaginationParamEnum.LIMIT]: z.coerce
 		.number()
 		.positive()

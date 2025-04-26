@@ -5,7 +5,7 @@
 
 	type Props = {
 		tags: Library['topics'];
-	}
+	};
 
 	// Maximum number of tags shown before collapsing (14 tags)
 	// Initial collapsed view shows only 8 tags to ensure expanding reveals enough new content
@@ -19,12 +19,16 @@
 	const visibleTags = $derived(collapsed ? tags.slice(0, TAGS_COLLAPSED_LIMIT) : tags);
 </script>
 
-<div class="flex items-center text-xs text-muted-foreground flex-wrap">
+<div class="text-muted-foreground flex flex-wrap items-center text-xs">
 	{#each visibleTags as tag, index (tag)}
 		{@const isActive = queryParams.isActiveTag(tag)}
 		<button
-			class={cn("cursor-pointer transition-all duration-150", isActive ? "underline":"hover:underline")}
-			onclick={() => queryParams.toggleTag(tag)}>
+			class={cn(
+				'cursor-pointer transition-all duration-150',
+				isActive ? 'underline' : 'hover:underline'
+			)}
+			onclick={() => queryParams.toggleTag(tag)}
+		>
 			{tag}
 		</button>
 		{#if index < visibleTags.length - 1}
@@ -33,8 +37,9 @@
 	{/each}
 	{#if collapsed}
 		<button
-			class="ml-2 text-primary cursor-pointer transition-all duration-150 hover:underline"
-			onclick={() => collapsed = false}>
+			class="text-primary ml-2 cursor-pointer transition-all duration-150 hover:underline"
+			onclick={() => (collapsed = false)}
+		>
 			+{tags.length - TAGS_COLLAPSED_LIMIT} more
 		</button>
 	{/if}

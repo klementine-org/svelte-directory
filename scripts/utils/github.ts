@@ -21,7 +21,7 @@ export function extractOwnerAndRepo(githubUrl: string) {
 	return {
 		ownerId: match[1],
 		repoId: match[2]
-	}
+	};
 }
 
 /**

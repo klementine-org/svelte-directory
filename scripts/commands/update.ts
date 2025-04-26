@@ -10,7 +10,7 @@ import {
 	saveLibraryFile
 } from '../utils';
 
-const logger = new Logger('update')
+const logger = new Logger('update');
 
 const command = new Command('update')
 	.description('Update library entries with latest GitHub information')
@@ -30,8 +30,12 @@ const command = new Command('update')
 
 			// Check if all provided GitHub URLs match libraries in the database
 			if (libraryIds.length !== librariesToUpdate.length) {
-				const notFoundIds = libraryIds.filter((id) => !librariesToUpdate.some((lib) => lib.id === id));
-				logger.error(`❌ Some provided GitHub URLs do not match any libraries in the database: ${notFoundIds.join(', ')}`);
+				const notFoundIds = libraryIds.filter(
+					(id) => !librariesToUpdate.some((lib) => lib.id === id)
+				);
+				logger.error(
+					`❌ Some provided GitHub URLs do not match any libraries in the database: ${notFoundIds.join(', ')}`
+				);
 				logger.note('⚠️ Please check the URLs and add them to the directory if necessary.');
 				process.exit(1);
 			}
@@ -53,7 +57,6 @@ const command = new Command('update')
 				librarySchema.parse(newLib);
 				saveLibraryFile(newLib, true);
 				updatedCount++;
-
 			} catch (error) {
 				errors.push(error);
 			}

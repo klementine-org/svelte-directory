@@ -8,7 +8,6 @@ export function createLibraryId(owner: string, repo: string) {
 	return (owner + '--' + repo).toLowerCase();
 }
 
-
 /**
  * Convert GitHub repository information to a library object
  * @param repo

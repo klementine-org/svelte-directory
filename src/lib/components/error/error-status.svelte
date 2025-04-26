@@ -46,13 +46,16 @@
 	const ErrorIcon = getErrorIcon(page.status);
 </script>
 
-<div class="mb-6 relative">
+<div class="relative mb-6">
 	<div
-		class="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-full animate-pulse"></div>
-	<ErrorIcon class="h-32 w-32 text-primary animate-bounce" strokeWidth={1.5} />
+		class="from-primary/20 via-primary/10 to-primary/20 absolute -inset-4 animate-pulse rounded-full bg-gradient-to-r"
+	></div>
+	<ErrorIcon class="text-primary h-32 w-32 animate-bounce" strokeWidth={1.5} />
 </div>
 
-<h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
+<h1
+	class="from-primary mb-4 bg-gradient-to-r to-yellow-500 bg-clip-text text-5xl font-bold text-transparent"
+>
 	{#if page.status === 404}
 		Page not found
 	{:else if page.status === 500}
@@ -62,6 +65,6 @@
 	{/if}
 </h1>
 
-<p class="text-xl text-muted-foreground mb-8 max-w-md">
+<p class="text-muted-foreground mb-8 max-w-md text-xl">
 	{errorMessage}
 </p>

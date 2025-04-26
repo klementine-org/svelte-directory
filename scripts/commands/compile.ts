@@ -4,7 +4,7 @@ import path from 'path';
 import lunr from 'lunr';
 import { loadLibraries, ASSETS_DIR, Logger } from '../utils';
 
-const logger = new Logger('compile')
+const logger = new Logger('compile');
 
 const command = new Command('compile')
 	.description('Compile library data into a unified JSON file with search index')

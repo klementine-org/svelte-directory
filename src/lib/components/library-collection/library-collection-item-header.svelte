@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { GlobeIcon, PackageIcon } from '@lucide/svelte';
-	import * as Avatar from "$lib/components/ui/avatar";
+	import * as Avatar from '$lib/components/ui/avatar';
 	import type { Library } from '$lib/types';
 
 	type Props = {
 		library: Library;
-	}
+	};
 
 	const { library }: Props = $props();
 
@@ -19,28 +19,34 @@
 </script>
 
 <div class="flex items-center gap-3">
-	<div class="flex items-center justify-center size-8 bg-muted rounded-full">
+	<div class="bg-muted flex size-8 items-center justify-center rounded-full">
 		<Avatar.Root>
-			<Avatar.Image src="data:image/png;base64,{library.ownerAvatarBase64}" alt="Organization Avatar" />
+			<Avatar.Image
+				src="data:image/png;base64,{library.ownerAvatarBase64}"
+				alt="Organization Avatar"
+			/>
 			<Avatar.Fallback>
-				<PackageIcon class="size-4 text-muted-foreground" />
+				<PackageIcon class="text-muted-foreground size-4" />
 			</Avatar.Fallback>
 		</Avatar.Root>
 	</div>
 	<div>
-		<div class="text-foreground/80 text-sm truncate">
+		<div class="text-foreground/80 truncate text-sm">
 			{library.owner} ({authors})
 		</div>
-		<div class="flex text-xs items-center">
+		<div class="flex items-center text-xs">
 			<div class="text-muted-foreground whitespace-nowrap">
 				Updated {library.lastUpdated}
 			</div>
 			{#if library.websiteUrl}
 				<span class="mx-2 text-xs">·</span>
-				<a href={library.websiteUrl} class="inline-flex text-muted-foreground hover:text-foreground items-center"
-					 target="_blank">
+				<a
+					href={library.websiteUrl}
+					class="text-muted-foreground hover:text-foreground inline-flex items-center"
+					target="_blank"
+				>
 					<GlobeIcon size={12} class="mr-1 flex-shrink-0" />
-					<span class="truncate text-ellipsis max-w-xs">{library.websiteUrl}</span>
+					<span class="max-w-xs truncate text-ellipsis">{library.websiteUrl}</span>
 				</a>
 			{/if}
 		</div>

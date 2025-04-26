@@ -2,7 +2,6 @@ import { queryParam, ssp } from 'sveltekit-search-params';
 import { QUERY_DEFAULTS, SortOptionEnum } from '$lib/constants';
 import { fromStore } from 'svelte/store';
 
-
 class QueryParams {
 	#searchStore;
 	#sortStore;
@@ -10,7 +9,9 @@ class QueryParams {
 
 	constructor() {
 		this.#searchStore = queryParam('search', ssp.string(), { debounceHistory: 500 });
-		this.#sortStore = queryParam('sort', ssp.string(QUERY_DEFAULTS.sortOption), { debounceHistory: 250 });
+		this.#sortStore = queryParam('sort', ssp.string(QUERY_DEFAULTS.sortOption), {
+			debounceHistory: 250
+		});
 		this.#tagsStore = queryParam('tags', ssp.array<string>(), { debounceHistory: 250 });
 	}
 
@@ -42,9 +43,9 @@ class QueryParams {
 
 	toggleTag(tag: string) {
 		if (this.tags?.includes(tag)) {
-			this.#tagsStore.update(tags => tags && tags.filter((t) => t !== tag));
+			this.#tagsStore.update((tags) => tags && tags.filter((t) => t !== tag));
 		} else {
-			this.#tagsStore.update((tags) => tags ? [...tags, tag] : [tag]);
+			this.#tagsStore.update((tags) => (tags ? [...tags, tag] : [tag]));
 		}
 	}
 }
