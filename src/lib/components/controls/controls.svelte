@@ -4,18 +4,20 @@
 	import TagFilter from './controls-tag-filter.svelte';
 </script>
 
-<SidebarGroup>
-	<SidebarGroupLabel>Sort</SidebarGroupLabel>
-	<SidebarGroupContent>
-		<SortSelector />
-	</SidebarGroupContent>
-</SidebarGroup>
+<div class="mb-12!">
+	<SidebarGroup>
+		<SidebarGroupLabel>Sort</SidebarGroupLabel>
+		<SidebarGroupContent>
+			<SortSelector />
+		</SidebarGroupContent>
+	</SidebarGroup>
 
-<!-- TODO: Add sort direction -->
+	<!-- TODO: Add sort direction -->
 
-<SidebarGroup>
-	<SidebarGroupLabel>Tags</SidebarGroupLabel>
-	<SidebarGroupContent>
-		<TagFilter />
-	</SidebarGroupContent>
-</SidebarGroup>
+	<SidebarGroup>
+		<SidebarGroupLabel>Tags</SidebarGroupLabel>
+		<SidebarGroupContent>
+			<TagFilter />
+		</SidebarGroupContent>
+	</SidebarGroup>
+</div>
