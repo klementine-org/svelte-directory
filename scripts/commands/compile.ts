@@ -4,6 +4,7 @@ import path from 'path';
 import lunr from 'lunr';
 import { loadLibraries, ASSETS_DIR, Logger } from '../utils';
 import type { Library } from '$lib/types';
+import _ from 'lodash';
 
 const logger = new Logger('compile');
 
@@ -45,8 +46,14 @@ const command = new Command('compile')
 
 		// Extract unique tags and sort them
 		const allTags = libraries.flatMap((library) => library.topics);
-		const uniqueTags = Array.from(new Set(allTags)).sort();
-		logger.info(`Found ${uniqueTags.length} unique tags`);
+		let countedTags = _.countBy(allTags);
+		// Omit all tags with count 1
+		countedTags = _.omitBy(countedTags, (count) => count <= 1);
+		// Omit specific tags
+		const SPECIFIC_TAGS = ['svelte', 'sveltejs', 'vue', 'react'];
+		countedTags = _.omit(countedTags, SPECIFIC_TAGS);
+		const uniqueTags = Array.from(Object.keys(countedTags)).sort();
+		logger.info(`Keeping ${uniqueTags.length} tags: ${uniqueTags.join(', ')}`);
 
 		const libraryMap = libraries.reduce(
 			(acc, library) => {
