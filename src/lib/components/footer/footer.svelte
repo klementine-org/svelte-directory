@@ -10,7 +10,7 @@
 				<ul class="space-y-2">
 					<li>
 						<a
-							href="{PUBLIC_REPOSITORY_URL}#add-library"
+							href="{PUBLIC_REPOSITORY_URL}?tab=readme-ov-file#-add-library"
 							class="hover:text-foreground transition-colors"
 							target="_blank"
 						>
