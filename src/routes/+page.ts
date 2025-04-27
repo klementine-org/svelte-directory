@@ -24,7 +24,7 @@ export const load = async ({ url }) => {
 	// Apply search if search term is more than 3 letters
 	if (params.search && params.search.length > 3) {
 		const matches = searchIndex.search(params.search);
-		results = matches.map((m) => libraries[m.ref as keyof typeof libraries] as Library);
+		results = matches.map((m) => libraries[m.ref as keyof typeof libraries]);
 	}
 
 	// Filter by tags (keeps library if library tags include all selected tags)
