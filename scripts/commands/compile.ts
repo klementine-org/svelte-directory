@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import lunr from 'lunr';
 import { loadLibraries, ASSETS_DIR, Logger } from '../utils';
+import type { Library } from '$lib/types';
 
 const logger = new Logger('compile');
 
@@ -47,11 +48,20 @@ const command = new Command('compile')
 		const uniqueTags = Array.from(new Set(allTags)).sort();
 		logger.info(`Found ${uniqueTags.length} unique tags`);
 
+		const libraryMap = libraries.reduce(
+			(acc, library) => {
+				// Create a map of library IDs to their respective objects
+				acc[library.id] = library;
+				return acc;
+			},
+			{} as Record<string, Library>
+		);
+
 		// Create a serializable object with the index, tags, and library data
 		const compiledData = {
 			index: searchIndex,
 			tags: uniqueTags,
-			libraries
+			libraries: libraryMap
 		};
 
 		// Determine output path

@@ -3121,8 +3121,8 @@
 		"zod",
 		"zod-validation"
 	],
-	"libraries": [
-		{
+	"libraries": {
+		"chakra-ui--zag": {
 			"id": "chakra-ui--zag",
 			"name": "zag",
 			"description": "Build your design system in React, Solid, Vue or Svelte. Powered by finite state machines",
@@ -3164,7 +3164,7 @@
 			"license": "MIT",
 			"version": "@zag-js/vue@1.11.0"
 		},
-		{
+		"ciscoheat--sveltekit-superforms": {
 			"id": "ciscoheat--sveltekit-superforms",
 			"name": "sveltekit-superforms",
 			"description": "Making SvelteKit forms a pleasure to use!",
@@ -3192,7 +3192,7 @@
 			"license": "MIT",
 			"version": "2.24.1"
 		},
-		{
+		"huntabyte--shadcn-svelte": {
 			"id": "huntabyte--shadcn-svelte",
 			"name": "shadcn-svelte",
 			"description": "shadcn/ui, but for Svelte. ✨",
@@ -3218,7 +3218,7 @@
 			"license": "MIT",
 			"version": "shadcn-svelte@1.0.0-next.9"
 		},
-		{
+		"lucide-icons--lucide": {
 			"id": "lucide-icons--lucide",
 			"name": "lucide",
 			"description": "Beautiful & consistent icon toolkit made by the community. Open-source project and a fork of Feather Icons.",
@@ -3244,7 +3244,7 @@
 			"license": "ISC",
 			"version": "0.265.0"
 		},
-		{
+		"melt-ui--melt-ui": {
 			"id": "melt-ui--melt-ui",
 			"name": "melt-ui",
 			"description": "A set of headless, accessible component builders for Svelte.",
@@ -3259,7 +3259,7 @@
 			"license": "MIT",
 			"version": "0.86.6"
 		},
-		{
+		"micha-lmxt--svelte-motion": {
 			"id": "micha-lmxt--svelte-motion",
 			"name": "svelte-motion",
 			"description": "An animation library for Svelte based on framer-motion.",
@@ -3274,7 +3274,7 @@
 			"license": "MIT",
 			"version": "0.0.1"
 		},
-		{
+		"mitcheljager--svelte-confetti": {
 			"id": "mitcheljager--svelte-confetti",
 			"name": "svelte-confetti",
 			"description": "Confetti in Svelte! Celebrate things with some extra flair. Animates using just HTML and CSS meaning it can work with SSR in SvelteKit!",
@@ -3289,7 +3289,7 @@
 			"license": "Unlicense",
 			"version": "0.0.1"
 		},
-		{
+		"paoloricciuti--sveltekit-search-params": {
 			"id": "paoloricciuti--sveltekit-search-params",
 			"name": "sveltekit-search-params",
 			"description": "The easiest way to read and WRITE from query parameters in sveltekit.",
@@ -3312,7 +3312,7 @@
 			"license": "MIT",
 			"version": "3.0.0"
 		},
-		{
+		"svecosystem--formsnap": {
 			"id": "svecosystem--formsnap",
 			"name": "formsnap",
 			"description": "Functional, accessible, and powerful form components for Svelte. 🫰 ",
@@ -3340,7 +3340,7 @@
 			"license": "MIT",
 			"version": "0.5.0"
 		},
-		{
+		"themesberg--flowbite-svelte": {
 			"id": "themesberg--flowbite-svelte",
 			"name": "flowbite-svelte",
 			"description": "Official Svelte components built for Flowbite and Tailwind CSS",
@@ -3376,7 +3376,7 @@
 			"license": "MIT",
 			"version": "1.0.0-next.1"
 		},
-		{
+		"threlte--threlte": {
 			"id": "threlte--threlte",
 			"name": "threlte",
 			"description": "3D framework for Svelte",
@@ -3391,7 +3391,7 @@
 			"license": "MIT",
 			"version": "website-og"
 		},
-		{
+		"xyflow--xyflow": {
 			"id": "xyflow--xyflow",
 			"name": "xyflow",
 			"description": "React Flow | Svelte Flow - Powerful open source libraries for building node-based UIs with React (https://reactflow.dev) or Svelte (https://svelteflow.dev). Ready out-of-the-box and infinitely customizable.",
@@ -3418,5 +3418,5 @@
 			"license": "MIT",
 			"version": "@xyflow/system@0.0.57"
 		}
-	]
+	}
 }
