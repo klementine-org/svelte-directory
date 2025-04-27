@@ -28,7 +28,7 @@
 	</div>
 {/snippet}
 
-<header class="bg-background sm:24 sticky top-0 z-10 h-36 border-b px-6 pt-4 pb-3">
+<header class="bg-background sticky top-0 z-10 h-36 border-b px-6 pt-4 pb-3 md:h-24">
 	{#if isMobile.current}
 		<div class="space-y-4">
 			<div class="flex items-center justify-between">

@@ -9,7 +9,7 @@
 
 {#snippet AppSidebar()}
 	<Sidebar.Root>
-		<Sidebar.Header class="sm:24 flex h-36 items-start justify-center border-b px-4">
+		<Sidebar.Header class="flex h-36 items-start justify-center border-b px-4 md:h-24">
 			<!-- This is the logo...yep ^^	-->
 			<div class="flex h-13! items-center gap-1.5">
 				<img src="/android-chrome-192x192.png" class="h-13" alt="" />
