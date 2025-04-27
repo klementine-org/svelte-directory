@@ -32,21 +32,23 @@
 	</div>
 	<div>
 		<div class="text-foreground/80 truncate text-sm">
-			{library.owner} ({authors})
+			{library.owner} <span class="hidden sm:inline">({authors})</span>
 		</div>
-		<div class="flex items-center text-xs">
-			<div class="text-muted-foreground whitespace-nowrap">
+		<div class="flex flex-col text-xs sm:flex-row sm:items-center @max-sm:justify-center">
+			<div class="text-muted-foreground order-2 whitespace-nowrap sm:order-1">
 				Updated {library.lastUpdated}
 			</div>
 			{#if library.websiteUrl}
-				<span class="mx-2 text-xs">·</span>
+				<span class="order-2 mx-2 hidden text-xs sm:inline">·</span>
 				<a
 					href={library.websiteUrl}
-					class="text-muted-foreground hover:text-foreground inline-flex items-center"
+					class="text-muted-foreground hover:text-foreground order-1 inline-flex items-center sm:order-3"
 					target="_blank"
 				>
 					<GlobeIcon size={12} class="mr-1 flex-shrink-0" />
-					<span class="max-w-xs truncate text-ellipsis">{library.websiteUrl}</span>
+					<span class="w-full truncate text-ellipsis sm:max-w-[150px] md:max-w-xs"
+						>{library.websiteUrl}</span
+					>
 				</a>
 			{/if}
 		</div>

@@ -65,7 +65,7 @@
 	bind:page={paginationParams.page}
 >
 	{#snippet children({ pages, range })}
-		<div class="my-8 flex items-center">
+		<div class="my-6 flex items-center">
 			<Pagination.PrevButton class={buttonClasses}>
 				<ChevronLeftIcon class="size-6" />
 			</Pagination.PrevButton>

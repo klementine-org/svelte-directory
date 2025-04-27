@@ -12,13 +12,13 @@
 		<p class="text-muted-foreground">Try adjusting your search or filters.</p>
 	</div>
 {:else}
-	<div class="flex h-full flex-col gap-10 pb-8">
-		<div>
+	<div class="flex h-full flex-col">
+		<div class="flex grow flex-col gap-10 pb-8">
 			{#each libraries as library (library.id)}
 				<Item {library} />
 			{/each}
 		</div>
-		<div class="mt-auto flex justify-center">
+		<div class="flex justify-center">
 			<Pagination />
 		</div>
 	</div>

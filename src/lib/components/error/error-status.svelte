@@ -50,11 +50,14 @@
 	<div
 		class="from-primary/20 via-primary/10 to-primary/20 absolute -inset-4 animate-pulse rounded-full bg-gradient-to-r"
 	></div>
-	<ErrorIcon class="text-primary h-32 w-32 animate-bounce" strokeWidth={1.5} />
+	<ErrorIcon
+		class="text-primary h-24 w-24 animate-bounce sm:h-28 sm:w-28 md:h-32 md:w-32"
+		strokeWidth={1.5}
+	/>
 </div>
 
 <h1
-	class="from-primary mb-4 bg-gradient-to-r to-yellow-500 bg-clip-text text-5xl font-bold text-transparent"
+	class="from-primary mb-4 bg-gradient-to-r to-yellow-500 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl md:text-5xl"
 >
 	{#if page.status === 404}
 		Page not found
@@ -65,6 +68,6 @@
 	{/if}
 </h1>
 
-<p class="text-muted-foreground mb-8 max-w-md text-xl">
+<p class="text-muted-foreground mb-8 max-w-md text-base sm:text-lg md:text-xl">
 	{errorMessage}
 </p>

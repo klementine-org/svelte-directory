@@ -9,7 +9,7 @@
 
 {#snippet AppSidebar()}
 	<Sidebar.Root>
-		<Sidebar.Header class="flex h-24 items-start justify-center border-b px-4">
+		<Sidebar.Header class="sm:24 flex h-36 items-start justify-center border-b px-4">
 			<!-- This is the logo...yep ^^	-->
 			<div class="flex h-13! items-center gap-1.5">
 				<img src="/android-chrome-192x192.png" class="h-13" alt="" />
@@ -31,7 +31,7 @@
 	{@render AppSidebar()}
 	<div class="flex w-full flex-col">
 		<Header />
-		<main class="ml-12 w-full max-w-3xl grow px-6 py-8 pr-6 lg:ml-16">
+		<main class="w-full grow px-6 py-8 sm:max-w-3xl sm:pr-0 sm:pl-20">
 			<LibraryCollection />
 		</main>
 		<Footer />
