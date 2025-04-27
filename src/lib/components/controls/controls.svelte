@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { SidebarGroup, SidebarGroupLabel, SidebarGroupContent } from '$lib/components/ui/sidebar';
+	import SortDirection from './controls-sort-direction.svelte';
 	import SortSelector from './controls-sort-selector.svelte';
 	import TagFilter from './controls-tag-filter.svelte';
 </script>
@@ -12,7 +13,12 @@
 		</SidebarGroupContent>
 	</SidebarGroup>
 
-	<!-- TODO: Add sort direction -->
+	<SidebarGroup>
+		<SidebarGroupLabel>Sort Direction</SidebarGroupLabel>
+		<SidebarGroupContent>
+			<SortDirection />
+		</SidebarGroupContent>
+	</SidebarGroup>
 
 	<SidebarGroup>
 		<SidebarGroupLabel>Tags</SidebarGroupLabel>

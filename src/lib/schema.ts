@@ -4,7 +4,8 @@ import {
 	PaginationParamEnum,
 	QUERY_DEFAULTS,
 	QueryParamEnum,
-	SortOptionEnum
+	SortDirectionEnum,
+	SortKeyEnum
 } from './constants';
 
 export const librarySchema = z.object({
@@ -33,9 +34,12 @@ export const queryParamsSchema = z.object({
 			// If an empty was empty, it would filter out all libraries, so we return null instead
 			return val?.length === 0 ? null : val;
 		}),
-	[QueryParamEnum.SORT]: z
-		.enum([SortOptionEnum.NAME, SortOptionEnum.STARS, SortOptionEnum.LAST_UPDATED])
-		.catch(QUERY_DEFAULTS.sortOption), // We need .catch here, because on initial load no default params are provided, only after the first load query params will be set in the client.
+	[QueryParamEnum.SORT_KEY]: z
+		.enum([SortKeyEnum.NAME, SortKeyEnum.STARS, SortKeyEnum.LAST_UPDATED])
+		.catch(QUERY_DEFAULTS[QueryParamEnum.SORT_KEY]), // We need .catch here, because on initial load no default params are provided, only after the first load query params will be set in the client.
+	[QueryParamEnum.SORT_DIRECTION]: z
+		.enum([SortDirectionEnum.ASC, SortDirectionEnum.DESC])
+		.catch(QUERY_DEFAULTS[QueryParamEnum.SORT_DIRECTION]), // We need .catch here, because on initial load no default params are provided, only after the first load query params will be set in the client.
 	[PaginationParamEnum.LIMIT]: z.coerce
 		.number()
 		.positive()
