@@ -18,6 +18,14 @@ export async function convertToLibrary(repo: Awaited<ReturnType<typeof getRepo>>
 		.then((response) => response.arrayBuffer())
 		.then((buffer) => Buffer.from(buffer).toString('base64'));
 
+	// Determine the last updated date:
+	// 1. Use the latest release date if available
+	// 2. Use the latest commit date if available
+	let lastUpdated = repo?.latestReleaseDate || repo.latestCommitDate;
+
+	// Format the date to YYYY-MM-DD
+	lastUpdated = lastUpdated.split('T')[0];
+
 	return {
 		id: createLibraryId(repo.owner.login, repo.name),
 		name: repo.name,
@@ -28,9 +36,9 @@ export async function convertToLibrary(repo: Awaited<ReturnType<typeof getRepo>>
 		websiteUrl: repo.homepage || repo.html_url,
 		githubUrl: repo.html_url,
 		stars: repo.stargazers_count,
-		lastUpdated: repo.updated_at.split('T')[0],
+		lastUpdated,
 		topics: repo.topics || [],
 		license: repo.license?.spdx_id || 'Unknown',
-		version: repo.tags.length > 0 ? repo.tags[0].name.replace(/^v/, '') : '0.0.1'
+		version: repo.tags.length > 0 ? repo.tags[0].name.replace(/^v/, '') : 'unknown'
 	} as Library;
 }

@@ -2,7 +2,9 @@ import { Octokit } from 'octokit';
 import { Logger } from './logger';
 
 const logger = new Logger();
-const octokit = new Octokit();
+const octokit = new Octokit({
+	auth: process.env.GITHUB_TOKEN
+});
 
 /**
  * Extract owner and repository name from GitHub URL
@@ -30,33 +32,55 @@ export function extractOwnerAndRepo(githubUrl: string) {
  * @param repo
  */
 export async function getRepo(owner: string, repo: string) {
+	// Fetch repository information
+	const { data: repoData } = await octokit.rest.repos.get({ owner, repo });
+
+	// Fetch contributors information
+	const { data: contributorsData } = await octokit.rest.repos.listContributors({
+		owner,
+		repo,
+		per_page: 5
+	});
+
+	// Fetch latest release to get release date
+	let latestReleaseDate = null;
 	try {
-		// Fetch repository information
-		const { data: repoData } = await octokit.rest.repos.get({ owner, repo });
-
-		// Fetch contributors information
-		const { data: contributorsData } = await octokit.rest.repos.listContributors({
+		const { data: releaseData } = await octokit.rest.repos.getLatestRelease({
 			owner,
-			repo,
-			per_page: 5
+			repo
 		});
+		latestReleaseDate = releaseData.published_at;
+	} catch {
+		logger.note(`No releases found for ${owner}/${repo} or error fetching releases.`);
+	}
 
-		// Fetch tags information for version
-		const { data: tagsData } = await octokit.rest.repos.listTags({
-			owner,
-			repo,
-			per_page: 1
-		});
+	let latestCommitDate = null;
+	const { data: commitsData } = await octokit.rest.repos.listCommits({
+		owner,
+		repo,
+		per_page: 1
+	});
 
-		return {
-			...repoData,
-			contributors: contributorsData,
-			tags: tagsData
-		};
-	} catch (error) {
-		logger.error('Error fetching repository information:', error);
+	latestCommitDate = commitsData[0].commit.committer?.date || commitsData[0].commit.author?.date;
+	if (!latestCommitDate) {
+		logger.error('No releases found for commits.');
 		process.exit(1);
 	}
+
+	// Fetch tags information for version
+	const { data: tagsData } = await octokit.rest.repos.listTags({
+		owner,
+		repo,
+		per_page: 1
+	});
+
+	return {
+		...repoData,
+		contributors: contributorsData,
+		latestReleaseDate,
+		latestCommitDate,
+		tags: tagsData
+	};
 }
 
 /**

@@ -51,9 +51,6 @@ const command = new Command('update')
 				const repo = await getRepo(library.owner, library.name);
 				const newLib = await convertToLibrary(repo);
 
-				// Add a small delay to avoid hitting GitHub API rate limits
-				await new Promise((resolve) => setTimeout(resolve, 1000));
-
 				librarySchema.parse(newLib);
 				saveLibraryFile(newLib, true);
 				updatedCount++;

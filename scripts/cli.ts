@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 import { Command } from 'commander';
 import addCommand from './commands/add';
 import updateCommand from './commands/update';
