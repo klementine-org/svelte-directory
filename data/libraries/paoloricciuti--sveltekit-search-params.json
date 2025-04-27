@@ -7,8 +7,8 @@
 	"authors": ["paoloricciuti", "renovate[bot]", "github-actions[bot]", "gwax", "paoramati"],
 	"websiteUrl": "https://sveltekit-search-params.netlify.app",
 	"githubUrl": "https://github.com/paoloricciuti/sveltekit-search-params",
-	"stars": 590,
-	"lastUpdated": "2025-04-26",
+	"stars": 591,
+	"lastUpdated": "2024-07-28",
 	"topics": [
 		"hacktoberfest",
 		"query-params",

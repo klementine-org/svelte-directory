@@ -7,8 +7,8 @@
 	"authors": ["TGlide", "huntabyte", "github-actions[bot]", "AdrianGonz97", "HalfdanJ"],
 	"websiteUrl": "https://melt-ui.com",
 	"githubUrl": "https://github.com/melt-ui/melt-ui",
-	"stars": 3997,
-	"lastUpdated": "2025-04-26",
+	"stars": 3999,
+	"lastUpdated": "2025-03-28",
 	"topics": ["component-library", "headless", "svelte", "typescript"],
 	"license": "MIT",
 	"version": "0.86.6"
