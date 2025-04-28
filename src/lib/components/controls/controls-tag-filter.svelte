@@ -8,9 +8,6 @@
 	import { cn } from '$lib/utils';
 
 	const allTags = $derived(page.data.tags);
-
-	// TODO: tags list should be sorted (and have number, of how many elemnents are assigned to a tag)
-	// TODO: tags list should have an expand/collapse button and a simple search bar to find tags
 </script>
 
 <div class="flex flex-wrap gap-2">

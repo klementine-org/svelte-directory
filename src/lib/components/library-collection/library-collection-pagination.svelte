@@ -44,7 +44,6 @@
 	import { ChevronLeftIcon, ChevronRightIcon } from '@lucide/svelte';
 	import { cn } from '$lib/utils.js';
 
-	// TODO: on nav, make scroll to top
 	const paginationParams = new PaginationParams(page.data.count);
 
 	// Styling
