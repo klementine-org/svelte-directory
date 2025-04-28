@@ -63,7 +63,7 @@ corepack enable pnpm
 pnpm install
 ```
 
-## Scripts
+### Scripts
 
 - Start the development server:
 
