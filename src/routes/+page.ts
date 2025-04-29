@@ -7,6 +7,10 @@ import { queryParamsSchema } from '$lib/schema';
 
 const { libraries, index, tags } = compiledData;
 
+// TODO: replace lunr, since it sometimes retunrns empty results for some queries (https://github.com/olivernn/lunr.js/issues/38)
+// Load search index
+const searchIndex = lunr.Index.load(index);
+
 export const load = async ({ url }) => {
 	const params = queryParamsSchema.parse({
 		[QueryParamEnum.SEARCH]: url.searchParams.get(QueryParamEnum.SEARCH) || undefined,
@@ -18,13 +22,10 @@ export const load = async ({ url }) => {
 		[PaginationParamEnum.LIMIT]: url.searchParams.get(PaginationParamEnum.LIMIT) || undefined
 	});
 
-	// Load search index
-	const searchIndex = lunr.Index.load(index);
-
 	let results: Library[] = Object.values(libraries);
 
 	// Apply search if search term is more than 3 letters
-	if (_.gt(params.search?.length, 3)) {
+	if (_.gt(params.search?.length, 1)) {
 		const matches = searchIndex.search(params[QueryParamEnum.SEARCH] as string);
 		results = matches.map((m) => libraries[m.ref as keyof typeof libraries]);
 	}
