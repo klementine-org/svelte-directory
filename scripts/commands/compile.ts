@@ -2,21 +2,20 @@ import { Command } from 'commander';
 import fs from 'fs';
 import path from 'path';
 import lunr from 'lunr';
-import { loadLibraries, ASSETS_DIR, Logger } from '../utils';
+import { loadLibraries } from '../utils';
 import type { Library } from '$lib/types';
 import _ from 'lodash';
-
-const logger = new Logger('compile');
+import { ASSETS_DIR } from '../config';
 
 const command = new Command('compile')
 	.description('Compile library data into a unified JSON file with search index')
 	.option('-o, --output <path>', 'Custom output path for the compiled data')
 	.action(async (options) => {
 		const libraries = loadLibraries();
-		logger.info(`Loaded ${libraries.length} libraries`);
+		console.info(`Loaded ${libraries.length} libraries`);
 
 		// Create search index
-		logger.await('Creating search index...');
+		console.log('Creating search index...');
 		const searchIndex = lunr(function () {
 			// Define the fields to index
 			this.field('id');
@@ -48,12 +47,12 @@ const command = new Command('compile')
 		const allTags = libraries.flatMap((library) => library.topics);
 		let countedTags = _.countBy(allTags);
 		// Omit all tags with count 1
-		countedTags = _.omitBy(countedTags, (count) => count <= 1);
+		countedTags = _.omitBy(countedTags, (count) => count <= 5);
 		// Omit specific tags
 		const SPECIFIC_TAGS = ['svelte', 'sveltejs', 'vue', 'react'];
 		countedTags = _.omit(countedTags, SPECIFIC_TAGS);
 		const uniqueTags = Array.from(Object.keys(countedTags)).sort();
-		logger.info(`Keeping ${uniqueTags.length} tags: ${uniqueTags.join(', ')}`);
+		console.info(`Keeping ${uniqueTags.length} tags: ${uniqueTags.join(', ')}`);
 
 		const libraryMap = libraries.reduce(
 			(acc, library) => {
@@ -79,7 +78,7 @@ const command = new Command('compile')
 
 		// Write the unified data to a file
 		fs.writeFileSync(outputPath, JSON.stringify(compiledData, null, 2), 'utf8');
-		logger.success(`Compiled data created and saved to ${outputPath}`);
+		console.log(`Compiled data created and saved to ${outputPath}`);
 	});
 
 export default command;

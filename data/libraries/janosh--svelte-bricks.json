@@ -7,7 +7,7 @@
 	"authors": ["janosh", "pre-commit-ci[bot]", "Hejtmus", "Zlendy"],
 	"websiteUrl": "https://janosh.github.io/svelte-bricks",
 	"githubUrl": "https://github.com/janosh/svelte-bricks",
-	"stars": 117,
+	"stars": 124,
 	"lastUpdated": "2025-04-18",
 	"topics": ["layout", "masonry", "pinterest-layout", "svelte", "svelte-kit", "typescript"],
 	"license": "MIT",

@@ -7,7 +7,7 @@
 	"authors": ["ollema", "huntabyte", "github-actions[bot]"],
 	"websiteUrl": "https://barqode.sveco.dev",
 	"githubUrl": "https://github.com/svecosystem/barqode",
-	"stars": 38,
+	"stars": 42,
 	"lastUpdated": "2024-12-12",
 	"topics": [
 		"barcode-reader",

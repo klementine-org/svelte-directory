@@ -7,8 +7,8 @@
 	"authors": ["kitschpatrol", "mcous"],
 	"websiteUrl": "https://kitschpatrol.com/svelte-tweakpane-ui",
 	"githubUrl": "https://github.com/kitschpatrol/svelte-tweakpane-ui",
-	"stars": 172,
-	"lastUpdated": "2025-03-18",
+	"stars": 181,
+	"lastUpdated": "2025-05-26",
 	"topics": [
 		"components",
 		"components-library",
@@ -27,5 +27,5 @@
 		"ui-library"
 	],
 	"license": "MIT",
-	"version": "1.5.6"
+	"version": "1.6.0-preview.1"
 }

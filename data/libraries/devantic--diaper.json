@@ -7,9 +7,9 @@
 	"authors": ["devantic"],
 	"websiteUrl": "https://diaperbs.vercel.app",
 	"githubUrl": "https://github.com/devantic/diaper",
-	"stars": 9,
-	"lastUpdated": "2025-04-25",
+	"stars": 40,
+	"lastUpdated": "2025-05-20",
 	"topics": [],
 	"license": "Unknown",
-	"version": "unknown"
+	"version": "2.2.2"
 }

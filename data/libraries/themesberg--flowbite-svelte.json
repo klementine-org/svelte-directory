@@ -7,8 +7,8 @@
 	"authors": ["shinokada", "jjagielka", "zoltanszogyenyi", "orefalo", "RyanZhiNie"],
 	"websiteUrl": "https://flowbite-svelte.com",
 	"githubUrl": "https://github.com/themesberg/flowbite-svelte",
-	"stars": 2458,
-	"lastUpdated": "2025-04-09",
+	"stars": 2514,
+	"lastUpdated": "2025-06-10",
 	"topics": [
 		"accordion",
 		"buttons",
@@ -32,5 +32,5 @@
 		"ui-components"
 	],
 	"license": "MIT",
-	"version": "1.0.0-next.1"
+	"version": "1.6.3"
 }

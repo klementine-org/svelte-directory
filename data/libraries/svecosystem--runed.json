@@ -7,8 +7,8 @@
 	"authors": ["TGlide", "huntabyte", "github-actions[bot]", "Hugos68", "AdrianGonz97"],
 	"websiteUrl": "https://runed.dev",
 	"githubUrl": "https://github.com/svecosystem/runed",
-	"stars": 1046,
-	"lastUpdated": "2025-03-21",
+	"stars": 1151,
+	"lastUpdated": "2025-05-15",
 	"topics": [
 		"runes",
 		"svelte",
@@ -25,5 +25,5 @@
 		"typescript"
 	],
 	"license": "MIT",
-	"version": "runed@0.25.0"
+	"version": "runed@0.28.0"
 }

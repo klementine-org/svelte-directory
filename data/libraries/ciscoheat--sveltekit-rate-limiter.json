@@ -7,7 +7,7 @@
 	"authors": ["ciscoheat", "niktek"],
 	"websiteUrl": "https://github.com/ciscoheat/sveltekit-rate-limiter",
 	"githubUrl": "https://github.com/ciscoheat/sveltekit-rate-limiter",
-	"stars": 254,
+	"stars": 260,
 	"lastUpdated": "2024-09-19",
 	"topics": ["rate-limiting", "sveltekit", "throttle-requests"],
 	"license": "MIT",

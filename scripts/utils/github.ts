@@ -1,7 +1,5 @@
 import { Octokit } from 'octokit';
-import { Logger } from './logger';
 
-const logger = new Logger();
 const octokit = new Octokit({
 	auth: process.env.GITHUB_TOKEN
 });
@@ -15,8 +13,8 @@ export function extractOwnerAndRepo(githubUrl: string) {
 	const match = githubUrl.match(githubUrlRegex);
 
 	if (!match) {
-		logger.error('Invalid GitHub URL format.');
-		logger.note('The URL should be in the format: https://github.com/owner/repo');
+		console.error('Invalid GitHub URL format.');
+		console.error('The URL should be in the format: https://github.com/owner/repo');
 		process.exit(1);
 	}
 
@@ -51,7 +49,7 @@ export async function getRepo(owner: string, repo: string) {
 		});
 		latestReleaseDate = releaseData.published_at;
 	} catch {
-		logger.note(`No releases found for ${owner}/${repo} or error fetching releases.`);
+		console.error(`No releases found for ${owner}/${repo} or error fetching releases.`);
 	}
 
 	let latestCommitDate = null;
@@ -63,7 +61,7 @@ export async function getRepo(owner: string, repo: string) {
 
 	latestCommitDate = commitsData[0].commit.committer?.date || commitsData[0].commit.author?.date;
 	if (!latestCommitDate) {
-		logger.error('No releases found for commits.');
+		console.error('No releases found for commits.');
 		process.exit(1);
 	}
 

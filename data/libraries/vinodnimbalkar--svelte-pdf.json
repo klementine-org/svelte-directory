@@ -7,8 +7,8 @@
 	"authors": ["vinodnimbalkar", "dependabot[bot]", "bdfinst", "aureleoules", "d-lowl"],
 	"websiteUrl": "https://www.npmjs.com/package/svelte-pdf",
 	"githubUrl": "https://github.com/vinodnimbalkar/svelte-pdf",
-	"stars": 218,
-	"lastUpdated": "2025-03-17",
+	"stars": 223,
+	"lastUpdated": "2025-06-08",
 	"topics": [
 		"javascript",
 		"pdf",
@@ -19,5 +19,5 @@
 		"svelte"
 	],
 	"license": "MIT",
-	"version": "1.0.27"
+	"version": "1.0.28"
 }

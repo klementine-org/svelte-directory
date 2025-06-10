@@ -7,8 +7,8 @@
 	"authors": ["mattcroat", "paoloricciuti", "ieedan", "akryptic", "b-d-m-p"],
 	"websiteUrl": "https://animotion.pages.dev",
 	"githubUrl": "https://github.com/animotionjs/animotion",
-	"stars": 1514,
-	"lastUpdated": "2025-04-03",
+	"stars": 1549,
+	"lastUpdated": "2025-05-27",
 	"topics": ["animotion", "presentation", "reveal", "slides", "svelte", "tailwindcss"],
 	"license": "MIT",
 	"version": "unknown"

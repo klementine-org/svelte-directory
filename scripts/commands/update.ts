@@ -2,15 +2,14 @@ import { Command } from 'commander';
 import { librarySchema } from '$lib/schema';
 import {
 	convertToLibrary,
-	createLibraryId,
 	extractOwnerAndRepo,
 	getRepo,
-	loadLibraries,
-	Logger,
+	loadLibraryUrls,
 	saveLibraryFile
 } from '../utils';
+import pLimit from 'p-limit';
 
-const logger = new Logger('update');
+const CONCURRENCY_LIMIT = 50;
 
 const command = new Command('update')
 	.description('Update library entries with latest GitHub information')
@@ -18,52 +17,51 @@ const command = new Command('update')
 		'[githubUrls...]',
 		'GitHub URLs of specific libraries to update (defaults to all if none provided)'
 	)
-	.action(async (githubUrls: string[]) => {
-		let librariesToUpdate = loadLibraries();
+	.action(async (libraryUrls: string[]) => {
+		const allLibraryUrls = loadLibraryUrls();
+		const libraryUrlsToProcess =
+			libraryUrls.length > 0
+				? allLibraryUrls.filter((record) => libraryUrls.includes(record.url))
+				: allLibraryUrls;
 
-		// Filter libraries if specific GitHub URLs are provided
-		if (githubUrls?.length > 0) {
-			const libraryIds = githubUrls
-				.map((url) => extractOwnerAndRepo(url))
-				.map(({ ownerId, repoId }) => createLibraryId(ownerId, repoId));
-			librariesToUpdate = librariesToUpdate.filter((lib) => libraryIds.includes(lib.id));
-
-			// Check if all provided GitHub URLs match libraries in the database
-			if (libraryIds.length !== librariesToUpdate.length) {
-				const notFoundIds = libraryIds.filter(
-					(id) => !librariesToUpdate.some((lib) => lib.id === id)
-				);
-				logger.error(
-					`❌ Some provided GitHub URLs do not match any libraries in the database: ${notFoundIds.join(', ')}`
-				);
-				logger.note('⚠️ Please check the URLs and add them to the directory if necessary.');
-				process.exit(1);
-			}
+		if (libraryUrls.length > libraryUrlsToProcess.length) {
+			console.error(
+				`Provided GitHub URLs do not match any libraries. Found ${libraryUrlsToProcess.length} matching libraries.`
+			);
+			return;
 		}
 
-		const errors = [];
-		let updatedCount = 0;
+		// Set a concurrency limit to avoid overwhelming the GitHub API
+		const limit = pLimit(CONCURRENCY_LIMIT);
 
-		// Process libraries sequentially to avoid rate limiting
-		logger.await(`Updating ${librariesToUpdate.length} libraries...`);
-		for (const library of librariesToUpdate) {
-			try {
-				const repo = await getRepo(library.owner, library.name);
-				const newLib = await convertToLibrary(repo);
+		console.log(
+			`Processing ${libraryUrlsToProcess.length} libraries with concurrency limit of ${CONCURRENCY_LIMIT}`
+		);
 
-				librarySchema.parse(newLib);
-				saveLibraryFile(newLib, true);
-				updatedCount++;
-			} catch (error) {
-				errors.push(error);
-			}
-		}
+		const tasks = libraryUrlsToProcess.map((record) => {
+			return limit(async () => {
+				try {
+					const { repoId, ownerId } = extractOwnerAndRepo(record.url);
+					const repo = await getRepo(ownerId, repoId);
+					const newLib = await convertToLibrary(repo);
+					librarySchema.parse(newLib);
+					saveLibraryFile(newLib, true);
+					return { success: true };
+				} catch (error) {
+					return { success: false, error };
+				}
+			});
+		});
 
-		logger.success(`Updated ${updatedCount} libraries successfully.`);
+		const results = await Promise.all(tasks);
+		const updatedCount = results.filter((result) => result.success).length;
+		const errors = results.filter((result) => !result.success).map((result) => result.error);
+
+		console.log(`Updated ${updatedCount} libraries successfully.`);
 		if (errors.length > 0) {
-			logger.error(`Encountered ${errors.length} errors during the update process.`);
+			console.error(`Encountered ${errors.length} errors during the update process.`);
 			errors.forEach((error) => {
-				logger.error(error);
+				console.error(error);
 			});
 		}
 	});

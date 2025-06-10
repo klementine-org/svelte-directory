@@ -7,7 +7,7 @@
 	"authors": ["mskocik", "harrisKAsher", "breakcorn", "dependabot[bot]", "RoxDevvv"],
 	"websiteUrl": "https://svelty-picker.vercel.app/",
 	"githubUrl": "https://github.com/mskocik/svelty-picker",
-	"stars": 222,
+	"stars": 223,
 	"lastUpdated": "2025-02-25",
 	"topics": ["datepicker", "datetime", "datetimepicker", "svelte", "timepicker"],
 	"license": "Unknown",

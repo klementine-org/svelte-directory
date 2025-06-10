@@ -7,9 +7,9 @@
 	"authors": ["ampled", "jrmoynihan"],
 	"websiteUrl": "https://inspect.eirik.space",
 	"githubUrl": "https://github.com/ampled/svelte-inspect-value",
-	"stars": 86,
-	"lastUpdated": "2025-04-28",
+	"stars": 111,
+	"lastUpdated": "2025-06-07",
 	"topics": ["debug", "inspect", "json", "state", "svelte", "tree"],
 	"license": "MIT",
-	"version": "0.7.2"
+	"version": "0.8.0"
 }

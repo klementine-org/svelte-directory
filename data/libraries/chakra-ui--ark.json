@@ -7,9 +7,9 @@
 	"authors": ["cschroeter", "renovate[bot]", "segunadebayo", "Omikorin", "TimKolberger"],
 	"websiteUrl": "https://ark-ui.com",
 	"githubUrl": "https://github.com/chakra-ui/ark",
-	"stars": 4256,
-	"lastUpdated": "2025-04-25",
+	"stars": 4376,
+	"lastUpdated": "2025-06-10",
 	"topics": ["components", "design-system", "headless", "react", "solid", "svelte", "ui", "vue"],
 	"license": "MIT",
-	"version": "@ark-ui/vue@5.7.0"
+	"version": "@ark-ui/vue@5.14.0"
 }

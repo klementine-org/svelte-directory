@@ -7,8 +7,8 @@
 	"authors": ["dominikg", "renovate[bot]", "github-actions[bot]", "bluwy", "benmccann"],
 	"websiteUrl": "https://github.com/sveltejs/vite-plugin-svelte",
 	"githubUrl": "https://github.com/sveltejs/vite-plugin-svelte",
-	"stars": 911,
-	"lastUpdated": "2024-12-18",
+	"stars": 921,
+	"lastUpdated": "2025-06-03",
 	"topics": ["svelte", "vite", "vite-plugin"],
 	"license": "MIT",
 	"version": "ite-plugin-svelte@0.11.1"

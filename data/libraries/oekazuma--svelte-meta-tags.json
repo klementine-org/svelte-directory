@@ -13,8 +13,8 @@
 	],
 	"websiteUrl": "https://oekazuma.github.io/svelte-meta-tags/",
 	"githubUrl": "https://github.com/oekazuma/svelte-meta-tags",
-	"stars": 578,
-	"lastUpdated": "2025-03-03",
+	"stars": 585,
+	"lastUpdated": "2025-06-03",
 	"topics": ["metadata", "metatags", "seo", "svelte", "sveltekit"],
 	"license": "MIT",
 	"version": "2.8.0"

@@ -7,8 +7,8 @@
 	"authors": ["techniq", "github-actions[bot]", "renovate[bot]", "brandonmcconnell", "dimfeld"],
 	"websiteUrl": "https://svelte-ux.techniq.dev/",
 	"githubUrl": "https://github.com/techniq/svelte-ux",
-	"stars": 978,
-	"lastUpdated": "2025-03-18",
+	"stars": 1003,
+	"lastUpdated": "2025-05-16",
 	"topics": ["svelte", "svelte-components"],
 	"license": "MIT",
 	"version": "0.54.0"

@@ -7,7 +7,7 @@
 	"authors": ["tzezar", "JakenHerman", "sebastianbrzustowicz", "slinso"],
 	"websiteUrl": "https://datagrid.tzezar.pl/",
 	"githubUrl": "https://github.com/tzezar/datagrid",
-	"stars": 176,
+	"stars": 195,
 	"lastUpdated": "2025-02-28",
 	"topics": ["datagrid", "headless", "svelte", "svelte5"],
 	"license": "MIT",

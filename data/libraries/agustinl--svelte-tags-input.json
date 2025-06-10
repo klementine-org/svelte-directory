@@ -7,7 +7,7 @@
 	"authors": ["agustinl", "dnotes", "mildred", "habibrosyad", "CatchABus"],
 	"websiteUrl": "https://svelte-tags-input.vercel.app/",
 	"githubUrl": "https://github.com/agustinl/svelte-tags-input",
-	"stars": 316,
+	"stars": 315,
 	"lastUpdated": "2025-01-07",
 	"topics": ["input", "javascript", "svelte", "svelte-tags", "tags", "ui"],
 	"license": "MIT",

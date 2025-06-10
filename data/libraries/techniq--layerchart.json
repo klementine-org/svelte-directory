@@ -7,8 +7,8 @@
 	"authors": ["techniq", "github-actions[bot]", "mattlangeman", "regexident", "dimfeld"],
 	"websiteUrl": "https://www.layerchart.com",
 	"githubUrl": "https://github.com/techniq/layerchart",
-	"stars": 857,
-	"lastUpdated": "2025-04-23",
+	"stars": 907,
+	"lastUpdated": "2025-05-14",
 	"topics": ["d3", "svelte", "svelte-components"],
 	"license": "MIT",
 	"version": "0.25.1"

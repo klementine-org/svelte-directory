@@ -7,9 +7,9 @@
 	"authors": ["ieedan", "github-actions[bot]", "AdrianGonz97", "huntabyte"],
 	"websiteUrl": "https://www.npm.im/@svecosystem/strip-types",
 	"githubUrl": "https://github.com/svecosystem/strip-types",
-	"stars": 12,
-	"lastUpdated": "2025-03-25",
+	"stars": 14,
+	"lastUpdated": "2025-05-06",
 	"topics": ["javascript", "strip", "svelte", "svelte-typescript", "ts-to-js", "typescript"],
 	"license": "MIT",
-	"version": "0.0.2"
+	"version": "0.0.3"
 }

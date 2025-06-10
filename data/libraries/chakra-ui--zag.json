@@ -7,8 +7,8 @@
 	"authors": ["segunadebayo", "renovate[bot]", "anubra266", "github-actions[bot]", "cschroeter"],
 	"websiteUrl": "http://zagjs.com",
 	"githubUrl": "https://github.com/chakra-ui/zag",
-	"stars": 4380,
-	"lastUpdated": "2025-04-20",
+	"stars": 4550,
+	"lastUpdated": "2025-06-10",
 	"topics": [
 		"a11y",
 		"accessibility",
@@ -32,5 +32,5 @@
 		"xstate"
 	],
 	"license": "MIT",
-	"version": "@zag-js/vue@1.11.0"
+	"version": "@zag-js/vue@1.15.2"
 }

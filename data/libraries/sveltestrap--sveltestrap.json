@@ -7,7 +7,7 @@
 	"authors": ["dysfunc", "msmauric", "vostrnad", "lachlancollins", "vince-winkintel"],
 	"websiteUrl": "https://sveltestrap.js.org",
 	"githubUrl": "https://github.com/sveltestrap/sveltestrap",
-	"stars": 175,
+	"stars": 182,
 	"lastUpdated": "2025-02-04",
 	"topics": ["bootstrap", "components", "javascript", "svelte", "sveltekit", "ui", "ux"],
 	"license": "MIT",

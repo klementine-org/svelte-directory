@@ -7,7 +7,7 @@
 	"authors": ["ciscoheat", "stLmpp"],
 	"websiteUrl": "https://www.npmjs.com/package/sveltekit-flash-message",
 	"githubUrl": "https://github.com/ciscoheat/sveltekit-flash-message",
-	"stars": 313,
+	"stars": 317,
 	"lastUpdated": "2025-01-23",
 	"topics": ["cookies", "flash-messages", "session", "svelte", "sveltekit"],
 	"license": "MIT",

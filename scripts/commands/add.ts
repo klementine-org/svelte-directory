@@ -1,28 +1,34 @@
+import Papa from 'papaparse';
+import fs from 'fs';
 import { Command } from 'commander';
-import { librarySchema } from '$lib/schema';
-import { getRepoFromUrl, saveLibraryFile, convertToLibrary, Logger } from '../utils';
+import { loadLibraryUrls } from '../utils';
+import path from 'path';
+import { DATA_DIR } from '../config';
 
-const logger = new Logger('add');
+const csvFilePath = path.join(DATA_DIR, 'libraries.csv');
 
 const command = new Command('add')
-	.description('Add a GitHub repository as a library')
-	.argument('<github-url>', 'GitHub repository URL')
-	.option('-f, --force', 'Overwrite existing library file')
-	.action(async (githubUrl, options) => {
-		logger.info(`Adding library from GitHub URL: ${githubUrl}`);
-		const repo = await getRepoFromUrl(githubUrl);
-		const library = await convertToLibrary(repo);
-
-		try {
-			librarySchema.parse(library);
-		} catch (validationError) {
-			console.error('Validation errors:');
-			console.error(validationError);
+	.description('Add a GitHub repository URL to libraries.csv')
+	.argument('<libraryUrl>', 'GitHub repository URL to add')
+	.action((libraryUrl) => {
+		if (!new URL(libraryUrl).hostname.includes('github.com')) {
+			console.error('URL must be a GitHub repository URL');
 			process.exit(1);
 		}
 
-		const filePath = saveLibraryFile(library, options.force);
-		logger.success(`Library entry created and saved to ${filePath}`);
+		const libraryUrls = loadLibraryUrls();
+
+		// Check for duplicates
+		if (libraryUrls.some((lib) => lib.url.toLowerCase() === libraryUrl.toLowerCase())) {
+			console.error(`URL ${libraryUrl} already exists.`);
+			process.exit(1);
+		}
+
+		// Append new record
+		const newRecord = Papa.unparse([{ url: libraryUrl, lastChecked: null }], { header: false });
+		fs.appendFileSync(csvFilePath, '\n' + newRecord + '\n');
+
+		console.log(`Successfully added ${libraryUrl} to libraries.csv`);
 	});
 
 export default command;

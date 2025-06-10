@@ -7,7 +7,7 @@
 	"authors": ["carstenlebek", "eltigerchino", "ErikSandquist", "kt0"],
 	"websiteUrl": "https://svelte-email.vercel.app",
 	"githubUrl": "https://github.com/carstenlebek/svelte-email",
-	"stars": 514,
+	"stars": 513,
 	"lastUpdated": "2023-06-14",
 	"topics": ["email", "svelte", "sveltekit"],
 	"license": "MIT",

@@ -7,8 +7,8 @@
 	"authors": ["moklick", "dependabot-preview[bot]", "peterkogo", "chrtze", "dependabot[bot]"],
 	"websiteUrl": "https://xyflow.com",
 	"githubUrl": "https://github.com/xyflow/xyflow",
-	"stars": 29120,
-	"lastUpdated": "2025-04-17",
+	"stars": 30036,
+	"lastUpdated": "2025-05-15",
 	"topics": [
 		"flowchart",
 		"graph",
@@ -23,5 +23,5 @@
 		"workflow"
 	],
 	"license": "MIT",
-	"version": "@xyflow/system@0.0.57"
+	"version": "@xyflow/system@0.0.61"
 }
