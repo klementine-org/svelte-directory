@@ -50,7 +50,7 @@
 	const letterClasses =
 		'flex flex-col items-stretch justify-center text-3xl font-medium select-none';
 	const buttonClasses = cn(
-		'inline-flex size-10 items-start pt-px justify-center disabled:invisible',
+		'inline-flex size-10 items-start pt-px justify-center disabled:invisible cursor-pointer',
 		'hover:text-primary hover:scale-[1.05] active:scale-[0.98] transition-all duration-150'
 	);
 	const paginationClasses =
