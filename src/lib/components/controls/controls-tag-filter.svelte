@@ -12,16 +12,16 @@
 
 <div class="flex flex-wrap gap-2">
 	{#each allTags as tag (tag)}
-		{@const isActive = queryParams.isActiveTag(tag)}
+		{@const isActive = queryParams.isActiveTag(tag.name)}
 		<Badge
-			onclick={() => queryParams.toggleTag(tag)}
+			onclick={() => queryParams.toggleTag(tag.name)}
 			variant={isActive ? 'default' : 'secondary'}
 			class={cn(
 				'cursor-pointer px-3 py-1.5 transition-all duration-150 select-none',
 				!isActive && 'hover:brightness-80'
 			)}
 		>
-			{tag}
+			{tag.name} ({tag.count})
 		</Badge>
 	{/each}
 </div>
