@@ -2,6 +2,7 @@
 	import { GlobeIcon, PackageIcon } from '@lucide/svelte';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import type { Library } from '$lib/types';
+	import { timeAgo } from '$lib/utils';
 
 	type Props = {
 		library: Library;
@@ -36,7 +37,7 @@
 		</div>
 		<div class="flex flex-col text-xs sm:flex-row sm:items-center @max-sm:justify-center">
 			<div class="text-muted-foreground order-2 whitespace-nowrap sm:order-1">
-				Updated {library.lastUpdated}
+				Updated {timeAgo(library.lastUpdated)}
 			</div>
 			{#if library.websiteUrl}
 				<span class="order-2 mx-2 hidden text-xs sm:inline">·</span>
