@@ -4,7 +4,7 @@
 	import { cn } from '$lib/utils.js';
 
 	type Props = {
-		tags: Library['topics'];
+		tags: Library['tags'];
 	};
 
 	// Maximum number of tags shown before collapsing (14 tags)

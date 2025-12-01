@@ -30,5 +30,5 @@
 	<Header {library} />
 	{@render StarLink()}
 	<p class="text-foreground/80 line-clamp-3 text-sm leading-snug">{library.description}</p>
-	<TagList tags={library.topics} />
+	<TagList tags={library.tags} />
 </div>
