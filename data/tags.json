@@ -1,0 +1,191 @@
+{
+	"tagClusters": {
+		"sveltekit": {
+			"baseTag": "sveltekit",
+			"count": 86,
+			"mappings": [
+				"svelte-kit",
+				"sveltekit-template",
+				"sveltekit-adapter",
+				"svelte-adapter",
+				"sapper"
+			]
+		},
+		"typescript": {
+			"baseTag": "typescript",
+			"count": 47,
+			"mappings": ["typescript-library", "typescript-definitions"]
+		},
+		"javascript": {
+			"baseTag": "javascript",
+			"count": 45,
+			"mappings": ["vanillajs", "vanilla-js", "vanilla-javascript"]
+		},
+		"components": {
+			"baseTag": "components",
+			"count": 31,
+			"mappings": [
+				"svelte-components",
+				"svelte-component",
+				"component",
+				"component-library",
+				"components-library",
+				"svelte-library",
+				"svelte-template"
+			]
+		},
+		"ui": {
+			"baseTag": "ui",
+			"count": 18,
+			"mappings": [
+				"ui-components",
+				"ui-library",
+				"ui-component",
+				"ui-kit",
+				"svelte-ui",
+				"svelte-ui-components",
+				"design-system",
+				"design-systems",
+				"design",
+				"material-design",
+				"material",
+				"bootstrap",
+				"daisyui",
+				"shadcn-svelte",
+				"shadcn-ui",
+				"svar-ui",
+				"headless",
+				"headlessui"
+			]
+		},
+		"css": {
+			"baseTag": "css",
+			"count": 7,
+			"mappings": ["tailwindcss", "tailwind", "tailwind-css", "unocss", "postcss"]
+		},
+		"build-tools": {
+			"baseTag": "build-tools",
+			"count": 10,
+			"mappings": ["vite", "vitejs", "vite-plugin", "webpack", "rollup", "esbuild"]
+		},
+		"i18n": {
+			"baseTag": "i18n",
+			"count": 8,
+			"mappings": ["internationalization", "localization", "l10n", "globalization", "translation"]
+		},
+		"icons": {
+			"baseTag": "icons",
+			"count": 3,
+			"mappings": ["icon", "svg-icons", "font-awesome", "fontawesome", "feather-icons"]
+		},
+		"table": {
+			"baseTag": "table",
+			"count": 7,
+			"mappings": ["datatable", "datagrid"]
+		},
+		"forms": {
+			"baseTag": "forms",
+			"count": 6,
+			"mappings": [
+				"form",
+				"form-validation",
+				"validation",
+				"input",
+				"select",
+				"autocomplete",
+				"combobox",
+				"typeahead",
+				"datepicker",
+				"fileupload"
+			]
+		},
+		"theme": {
+			"baseTag": "theme",
+			"count": 4,
+			"mappings": ["themes", "dark-mode", "light-mode"]
+		},
+		"drag-drop": {
+			"baseTag": "drag-drop",
+			"count": 4,
+			"mappings": ["draggable", "drag", "drag-and-drop", "moveable", "resizable", "dropzone"]
+		},
+		"ssg": {
+			"baseTag": "ssg",
+			"count": 2,
+			"mappings": ["static-site-generator", "static-adapter", "jamstack", "ssr"]
+		},
+		"accessibility": {
+			"baseTag": "accessibility",
+			"count": 5,
+			"mappings": ["a11y", "accessible"]
+		},
+		"storage": {
+			"baseTag": "storage",
+			"count": 3,
+			"mappings": ["localstorage", "sessionstorage", "cookie"]
+		},
+		"animation": {
+			"baseTag": "animation",
+			"count": 4,
+			"mappings": ["carousel", "carousel-component", "slider", "view-transitions"]
+		},
+		"editor": {
+			"baseTag": "editor",
+			"count": 4,
+			"mappings": [
+				"text-editor",
+				"rich-text-editor",
+				"tiptap",
+				"syntax-highlighting",
+				"monaco-editor"
+			]
+		},
+		"visualization": {
+			"baseTag": "visualization",
+			"count": 5,
+			"mappings": [
+				"data-visualization",
+				"charts",
+				"svelte-charting-library",
+				"d3",
+				"graphics",
+				"diagrams",
+				"flowcharts"
+			]
+		},
+		"ai": {
+			"baseTag": "ai",
+			"count": 3,
+			"mappings": ["openai", "chatgpt", "vercel-ai-sdk"]
+		},
+		"auth": {
+			"baseTag": "auth",
+			"count": 3,
+			"mappings": ["authentication"]
+		},
+		"backend": {
+			"baseTag": "backend",
+			"count": 2,
+			"mappings": ["supabase", "pocketbase", "postgresql", "graphql", "prismic"]
+		},
+		"layout": {
+			"baseTag": "layout",
+			"count": 3,
+			"mappings": ["grid", "masonry"]
+		},
+		"ui-patterns": {
+			"baseTag": "ui-patterns",
+			"count": 2,
+			"mappings": [
+				"modal",
+				"dialog",
+				"dropdown",
+				"tabs",
+				"toast",
+				"notifications",
+				"progress-bar",
+				"calendar"
+			]
+		}
+	}
+}
