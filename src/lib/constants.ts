@@ -17,8 +17,8 @@ export enum QueryParamEnum {
 }
 
 export const QUERY_DEFAULTS = {
-	[QueryParamEnum.SORT_KEY]: SortKeyEnum.NAME,
-	[QueryParamEnum.SORT_DIRECTION]: SortDirectionEnum.ASC
+	[QueryParamEnum.SORT_KEY]: SortKeyEnum.STARS,
+	[QueryParamEnum.SORT_DIRECTION]: SortDirectionEnum.DESC
 };
 
 export enum PaginationParamEnum {
