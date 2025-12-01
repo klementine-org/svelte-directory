@@ -22,8 +22,8 @@
 	<div class="max-w-4xl space-y-1 sm:space-y-2">
 		<Search />
 		<span class="text-muted-foreground text-sm">
-			{count}
-			{count === 1 ? 'Library' : 'Libraries'} Found
+			Found <strong>{count}</strong>
+			{count === 1 ? 'library' : 'libraries'}.
 		</span>
 	</div>
 {/snippet}
