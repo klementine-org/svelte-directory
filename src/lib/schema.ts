@@ -8,6 +8,7 @@ import {
 	SortKeyEnum
 } from './constants';
 
+// TODO: merge with server-side schema to avoid duplication
 export const librarySchema = z.object({
 	id: z.string(),
 	name: z.string(),
@@ -19,7 +20,8 @@ export const librarySchema = z.object({
 	githubUrl: z.string(),
 	stars: z.number(),
 	lastUpdated: z.string(),
-	topics: z.array(z.string()),
+	githubTopics: z.array(z.string()),
+	tags: z.array(z.string()),
 	license: z.string(),
 	version: z.string()
 });
