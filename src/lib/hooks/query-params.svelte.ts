@@ -1,5 +1,10 @@
 import { queryParam, ssp } from 'sveltekit-search-params';
-import { QUERY_DEFAULTS, QueryParamEnum } from '$lib/constants';
+import {
+	QUERY_DEFAULTS,
+	QueryParamEnum,
+	PAGINATION_DEFAULTS,
+	PaginationParamEnum
+} from '$lib/constants';
 import { fromStore } from 'svelte/store';
 
 class QueryParams {
@@ -7,6 +12,7 @@ class QueryParams {
 	#sortKeyStore;
 	#sortDirectionStore;
 	#tagsStore;
+	#skipStore;
 
 	constructor() {
 		this.#searchStore = queryParam(QueryParamEnum.SEARCH, ssp.string(), { debounceHistory: 500 });
@@ -27,6 +33,7 @@ class QueryParams {
 		this.#tagsStore = queryParam(QueryParamEnum.TAGS, ssp.array<string>(), {
 			debounceHistory: 250
 		});
+		this.#skipStore = queryParam(PaginationParamEnum.SKIP, ssp.number(PAGINATION_DEFAULTS.skip));
 	}
 
 	get search() {
@@ -35,6 +42,7 @@ class QueryParams {
 
 	set search(v: string | null) {
 		this.#searchStore.set(v);
+		this.resetPagination();
 	}
 
 	get sortKey() {
@@ -45,6 +53,7 @@ class QueryParams {
 		// Value must always be a valid SortOption, so we use a type assertion to prevent deselection
 		if (!v) return;
 		this.#sortKeyStore.set(v);
+		this.resetPagination();
 	}
 
 	get sortDirection() {
@@ -54,6 +63,7 @@ class QueryParams {
 	set sortDirection(v: string | undefined) {
 		if (!v) return;
 		this.#sortDirectionStore.set(v);
+		this.resetPagination();
 	}
 
 	get tags() {
@@ -70,6 +80,12 @@ class QueryParams {
 		} else {
 			this.#tagsStore.update((tags) => (tags ? [...tags, tag] : [tag]));
 		}
+		this.resetPagination();
+	}
+
+	resetPagination() {
+		// Reset to page 1 when filters change
+		this.#skipStore.set(PAGINATION_DEFAULTS.skip);
 	}
 }
 
