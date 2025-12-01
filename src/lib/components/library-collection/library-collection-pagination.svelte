@@ -8,9 +8,8 @@
 		#skipStore;
 		#skip;
 		#limit;
-		count: number;
 
-		constructor(count: number) {
+		constructor() {
 			this.#limitStore = queryParam(
 				PaginationParamEnum.LIMIT,
 				ssp.number(PAGINATION_DEFAULTS.limit)
@@ -19,8 +18,6 @@
 
 			this.#skipStore = queryParam(PaginationParamEnum.SKIP, ssp.number(PAGINATION_DEFAULTS.skip));
 			this.#skip = fromStore(this.#skipStore);
-
-			this.count = count;
 		}
 
 		get page() {
@@ -44,7 +41,9 @@
 	import { ChevronLeftIcon, ChevronRightIcon } from '@lucide/svelte';
 	import { cn } from '$lib/utils.js';
 
-	const paginationParams = new PaginationParams(page.data.count);
+	const paginationParams = new PaginationParams();
+
+	const count = $derived(page.data.count);
 
 	// Styling
 	const letterClasses =
@@ -58,18 +57,14 @@
 	const ellipsisClasses = 'text-muted-foreground cursor-default text-[15px] font-medium';
 </script>
 
-<Pagination.Root
-	count={paginationParams.count}
-	perPage={paginationParams.perPage}
-	bind:page={paginationParams.page}
->
+<Pagination.Root {count} perPage={paginationParams.perPage} bind:page={paginationParams.page}>
 	{#snippet children({ pages, range })}
 		<div class="my-6 flex items-center">
 			<Pagination.PrevButton class={buttonClasses}>
 				<ChevronLeftIcon class="size-6" />
 			</Pagination.PrevButton>
 			<span class="sr-only">
-				Showing {range.start} to {range.end} of {page.data.count} results
+				Showing {range.start} to {range.end} of {count} results
 			</span>
 			<div class="flex items-baseline gap-0.5" aria-hidden="true">
 				<div class={letterClasses}>S</div>
